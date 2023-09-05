@@ -13,13 +13,14 @@
 # The required secrets are CONTRAST_API_KEY, CONTRAST_ORGANIZATION_ID and CONTRAST_AUTH_HEADER.
 
 on:
+  workflow_dispatch:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ "main" ]
-  schedule:
-    - cron: '25 7 * * 1'
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
 
 permissions:
   contents: read
