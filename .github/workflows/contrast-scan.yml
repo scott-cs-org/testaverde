@@ -54,7 +54,6 @@ jobs:
         artifact: target/testaverde-1.0.jar
         #projectId: '4b7a1ad8-a8c1-481d-b695-5674255898ba'
         projectName: "testaverde"
-        #language: 'java'
         apiKey: ${{ secrets.CONTRAST_GITHUB_APP_API_KEY }}
         orgId: ${{ vars.CONTRAST_GITHUB_APP_ORG_ID }}
         authHeader: ${{ secrets.CONTRAST_AUTH_HEADER }}
