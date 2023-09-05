@@ -52,9 +52,9 @@ jobs:
       uses: Contrast-Security-OSS/contrastscan-action@v2.0.3
       with:
         artifact: target/testaverde-1.0.jar
-        projectId: '4b7a1ad8-a8c1-481d-b695-5674255898ba'
+        #projectId: '4b7a1ad8-a8c1-481d-b695-5674255898ba'
         projectName: "testaverde"
-        language: 'java'
+        #language: 'java'
         #apiKey: ${{ secrets.CONTRAST_GITHUB_APP_API_KEY }}
         apiKey: 'at1GlzpdKQgFSO7fSzeY7ffz02h7Fj6X'
         orgId: ${{ vars.CONTRAST_GITHUB_APP_ORG_ID }}
