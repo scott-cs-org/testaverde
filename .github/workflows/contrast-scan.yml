@@ -53,16 +53,14 @@ jobs:
       uses: Contrast-Security-OSS/contrastscan-action@v2.0.3
       with:
         artifact: target/testaverde-1.0.jar
-        #projectId: '4b7a1ad8-a8c1-481d-b695-5674255898ba'
         projectName: "testaverde"
         apiKey: ${{ secrets.CONTRAST_GITHUB_APP_API_KEY }}
         orgId: ${{ vars.CONTRAST_GITHUB_APP_ORG_ID }}
         authHeader: ${{ secrets.CONTRAST_AUTH_HEADER }}
-        ##authHeader: 'c2NvdHQubWNiYWluQGNvbnRyYXN0c2VjdXJpdHkuY29tOlA2TDlQMDgyOEwyMjQzVVI='
-        #authHeader: ${{ secrets.CONTRAST_GITHUB_APP_AUTH_HEADER }}
         apiUrl: ${{ vars.CONTRAST_GITHUB_APP_TS_URL }}
+        
     #Upload the results to GitHub
-    - name: Upload SARIF file
-      uses: github/codeql-action/upload-sarif@v2
-      with:
-        sarif_file: results.sarif # The file name must be 'results.sarif', as this is what the Github Action will output
+    #- name: Upload SARIF file
+    #  uses: github/codeql-action/upload-sarif@v2
+    #  with:
+    #    sarif_file: results.sarif # The file name must be 'results.sarif', as this is what the Github Action will output
