@@ -45,8 +45,6 @@ jobs:
 
     - name: Maven Build
       run: mvn --batch-mode package
-    - name: Environment Check
-      run: find . -print
       
     # Scan Artifact
     - name: Contrast Scan Action
@@ -60,7 +58,7 @@ jobs:
         apiUrl: ${{ vars.CONTRAST_GITHUB_APP_TS_URL }}
         
     #Upload the results to GitHub
-    #- name: Upload SARIF file
-    #  uses: github/codeql-action/upload-sarif@v2
-    #  with:
-    #    sarif_file: results.sarif # The file name must be 'results.sarif', as this is what the Github Action will output
+    - name: Upload SARIF file
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: results.sarif # The file name must be 'results.sarif', as this is what the Github Action will output
