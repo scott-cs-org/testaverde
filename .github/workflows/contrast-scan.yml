@@ -36,8 +36,15 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     # Since Contrast Scan is designed to run against your deployable artifact, the steps to build your artifact should go here.
-    # -name: Build Project
-    # ...
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Maven Build
+      run: mvn --batch-mode package
+      
     # Scan Artifact
     - name: Contrast Scan Action
       uses: Contrast-Security-OSS/contrastscan-action@v2.0.3
