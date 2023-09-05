@@ -40,7 +40,7 @@ jobs:
     # ...
     # Scan Artifact
     - name: Contrast Scan Action
-      uses: Contrast-Security-OSS/contrastscan-action@7352a45d9678ec8a434cf061b07ffb51c1e351a1
+      uses: Contrast-Security-OSS/contrastscan-action@v2.0.3
       with:
         artifact: testaverde/target/testaverde-1.0-SNAPSHOT.jar
         projectName: "testaverde"
